@@ -2,7 +2,7 @@ package com.bloomtech.library.models.checkableTypes;
 
 import java.util.HashSet;
 
-public abstract class Checkable {
+public class Checkable {
     private String isbn;
     private String title;
 

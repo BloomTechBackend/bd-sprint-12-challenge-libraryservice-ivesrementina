@@ -187,7 +187,6 @@ public class LibraryServiceTest {
         when(libraryRepository.findByName(library.getName())).thenReturn(Optional.of(library));
 
         CheckableAmount checkableAmount = libraryService.getCheckableAmount(library.getName(), checkable.getIsbn());
-
         assertEquals(2, checkableAmount.getAmount());
         assertEquals(checkable.getIsbn(), checkableAmount.getCheckable().getIsbn());
     }
@@ -247,4 +246,5 @@ public class LibraryServiceTest {
         assertEquals(4, overdueCheckouts.size());
         verify(libraryRepository).findByName(library.getName());
     }
+
 }
