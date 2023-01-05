@@ -55,7 +55,6 @@ public class LibraryService {
         Library library = getLibraryByName(libraryName);
         Checkable checkable = checkableService.getByIsbn(checkableIsbn);
         List<CheckableAmount> checkableAmountList = library.getCheckables();
-
         for (CheckableAmount checkableAmount : checkableAmountList){
             if (checkable.equals(checkableAmount.getCheckable())){
                 return checkableAmount;
@@ -69,7 +68,6 @@ public class LibraryService {
         List<LibraryAvailableCheckouts> available = new ArrayList<>();
         Checkable checkable = checkableService.getByIsbn(isbn);
         List<Library> libraries = libraryRepository.findAll();
-
         for(Library library : libraries){
             for (CheckableAmount checkableAmount : library.getCheckables()){
                 checkableAmount.getCheckable();
@@ -85,7 +83,6 @@ public class LibraryService {
         Library library = getLibraryByName(libraryName);
         Set<LibraryCard> libraryCards = library.getLibraryCards();
         LocalDateTime now = LocalDateTime.now();
-
         for(LibraryCard libraryCard: libraryCards) {
             List<Checkout> checkoutList = libraryCard.getCheckouts();
             for (Checkout checkout : checkoutList){
